@@ -1,0 +1,12 @@
+D:\专高六\练习\6.20练习\WebApplication1\Entity\bin\Debug\net5.0\Rbac.Entity.deps.json
+D:\专高六\练习\6.20练习\WebApplication1\Entity\bin\Debug\net5.0\Rbac.Entity.dll
+D:\专高六\练习\6.20练习\WebApplication1\Entity\bin\Debug\net5.0\Rbac.Entity.pdb
+D:\专高六\练习\6.20练习\WebApplication1\Entity\obj\Debug\net5.0\Rbac.Entity.csproj.AssemblyReference.cache
+D:\专高六\练习\6.20练习\WebApplication1\Entity\obj\Debug\net5.0\Rbac.Entity.GeneratedMSBuildEditorConfig.editorconfig
+D:\专高六\练习\6.20练习\WebApplication1\Entity\obj\Debug\net5.0\Rbac.Entity.AssemblyInfoInputs.cache
+D:\专高六\练习\6.20练习\WebApplication1\Entity\obj\Debug\net5.0\Rbac.Entity.AssemblyInfo.cs
+D:\专高六\练习\6.20练习\WebApplication1\Entity\obj\Debug\net5.0\Rbac.Entity.csproj.CoreCompileInputs.cache
+D:\专高六\练习\6.20练习\WebApplication1\Entity\obj\Debug\net5.0\Rbac.Entity.dll
+D:\专高六\练习\6.20练习\WebApplication1\Entity\obj\Debug\net5.0\refint\Rbac.Entity.dll
+D:\专高六\练习\6.20练习\WebApplication1\Entity\obj\Debug\net5.0\Rbac.Entity.pdb
+D:\专高六\练习\6.20练习\WebApplication1\Entity\obj\Debug\net5.0\ref\Rbac.Entity.dll

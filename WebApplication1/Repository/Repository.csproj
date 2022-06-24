@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Menu\**" />
+    <EmbeddedResource Remove="Menu\**" />
+    <None Remove="Menu\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NPOI" Version="2.5.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Entity\Rbac.Entity.csproj" />
+	  <PackageReference Include="Z.EntityFramework.Plus.EFCore" Version="5.14.1" />
+  </ItemGroup>
+
+</Project>

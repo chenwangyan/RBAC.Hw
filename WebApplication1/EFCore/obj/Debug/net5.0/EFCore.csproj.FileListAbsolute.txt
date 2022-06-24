@@ -1,0 +1,12 @@
+D:\专高六\练习\6.20练习\WebApplication1\EFCore\obj\Debug\net5.0\EFCore.csproj.AssemblyReference.cache
+D:\专高六\练习\6.20练习\WebApplication1\EFCore\obj\Debug\net5.0\EFCore.GeneratedMSBuildEditorConfig.editorconfig
+D:\专高六\练习\6.20练习\WebApplication1\EFCore\obj\Debug\net5.0\EFCore.AssemblyInfoInputs.cache
+D:\专高六\练习\6.20练习\WebApplication1\EFCore\obj\Debug\net5.0\EFCore.AssemblyInfo.cs
+D:\专高六\练习\6.20练习\WebApplication1\EFCore\obj\Debug\net5.0\EFCore.csproj.CoreCompileInputs.cache
+D:\专高六\练习\6.20练习\WebApplication1\EFCore\bin\Debug\net5.0\EFCore.deps.json
+D:\专高六\练习\6.20练习\WebApplication1\EFCore\bin\Debug\net5.0\EFCore.dll
+D:\专高六\练习\6.20练习\WebApplication1\EFCore\bin\Debug\net5.0\EFCore.pdb
+D:\专高六\练习\6.20练习\WebApplication1\EFCore\obj\Debug\net5.0\EFCore.dll
+D:\专高六\练习\6.20练习\WebApplication1\EFCore\obj\Debug\net5.0\refint\EFCore.dll
+D:\专高六\练习\6.20练习\WebApplication1\EFCore\obj\Debug\net5.0\EFCore.pdb
+D:\专高六\练习\6.20练习\WebApplication1\EFCore\obj\Debug\net5.0\ref\EFCore.dll

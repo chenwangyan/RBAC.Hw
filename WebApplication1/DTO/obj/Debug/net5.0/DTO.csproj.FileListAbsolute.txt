@@ -1,0 +1,15 @@
+D:\专高六\练习\6.20练习\WebApplication1\DTO\bin\Debug\net5.0\DTO.deps.json
+D:\专高六\练习\6.20练习\WebApplication1\DTO\bin\Debug\net5.0\DTO.dll
+D:\专高六\练习\6.20练习\WebApplication1\DTO\bin\Debug\net5.0\DTO.pdb
+D:\专高六\练习\6.20练习\WebApplication1\DTO\bin\Debug\net5.0\Rbac.Entity.dll
+D:\专高六\练习\6.20练习\WebApplication1\DTO\bin\Debug\net5.0\Rbac.Entity.pdb
+D:\专高六\练习\6.20练习\WebApplication1\DTO\obj\Debug\net5.0\DTO.csproj.AssemblyReference.cache
+D:\专高六\练习\6.20练习\WebApplication1\DTO\obj\Debug\net5.0\DTO.GeneratedMSBuildEditorConfig.editorconfig
+D:\专高六\练习\6.20练习\WebApplication1\DTO\obj\Debug\net5.0\DTO.AssemblyInfoInputs.cache
+D:\专高六\练习\6.20练习\WebApplication1\DTO\obj\Debug\net5.0\DTO.AssemblyInfo.cs
+D:\专高六\练习\6.20练习\WebApplication1\DTO\obj\Debug\net5.0\DTO.csproj.CoreCompileInputs.cache
+D:\专高六\练习\6.20练习\WebApplication1\DTO\obj\Debug\net5.0\DTO.csproj.CopyComplete
+D:\专高六\练习\6.20练习\WebApplication1\DTO\obj\Debug\net5.0\DTO.dll
+D:\专高六\练习\6.20练习\WebApplication1\DTO\obj\Debug\net5.0\refint\DTO.dll
+D:\专高六\练习\6.20练习\WebApplication1\DTO\obj\Debug\net5.0\DTO.pdb
+D:\专高六\练习\6.20练习\WebApplication1\DTO\obj\Debug\net5.0\ref\DTO.dll
