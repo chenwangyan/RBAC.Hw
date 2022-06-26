@@ -15,7 +15,7 @@ namespace Rbac.Entity
         ///<summary>
         ///管理员Id
         ///</summary>
-        public long AdminId { get; set; }
+        public int AdminId { get; set; }
 
         ///<summary>
         ///用户名
@@ -35,7 +35,7 @@ namespace Rbac.Entity
         ///<summary>
         ///末次登录时间
         ///</summary>
-        public DateTime LastLoginTime { get; set; }
+        public DateTime? LastLoginTime { get; set; }
 
         ///<summary>
         ///末次登录IP

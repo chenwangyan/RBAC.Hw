@@ -20,6 +20,8 @@ using NPOI.SS.Formula.Functions;
 using Rbac.Application;
 using Repository.Menus;
 using System.Reflection;
+using Rbac.Application.AdminService;
+using Rbac.Application.RoleService;
 
 namespace WebApplication1
 {
@@ -62,9 +64,13 @@ namespace WebApplication1
             services.AddAutoMapper(Assembly.Load("Rbac.Application"));
 
             //зЂВс
-            //services.AddScoped<IRepositoryT<T>,RepositoryT<T>>();
-            services.AddScoped<IMenuRepository,MenuRepository>();
+            services.AddScoped<IMenuRepository, MenuRepository>();
+            services.AddScoped<IRoleRepository, RoleRepository>();
+            services.AddScoped<IAdminRepository, AdminRepository>();
+
+            services.AddScoped<IServiceAdmin,ServiceAdmin>();
             services.AddScoped<IServiceMenu,ServiceMenu>();
+            services.AddScoped<IServiceRole,ServiceRole>();
             
         }
 

@@ -14,6 +14,10 @@ namespace Rbac.Application
         public AutoMapperConfig()
         {
              CreateMap<MenuDTO,Menu>().ReverseMap();
+             CreateMap<MenuAddDTO,Menu>().ReverseMap();
+             CreateMap<MenuTreeDTO,Menu>().ReverseMap();
+             CreateMap<Admin,AdminDTO>().ReverseMap();
+             CreateMap<Role,RoleDTO>().ReverseMap();
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Rbac.Entity
     public class AdminRole
     {
         public int Id { get; set; }
-        public long AdminId { get; set; }
+        public int AdminId { get; set; }
         public int RoleId { get; set; }
     }
 }

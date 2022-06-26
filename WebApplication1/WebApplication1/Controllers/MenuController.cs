@@ -3,6 +3,7 @@ using Rbac.Application;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Rbac.Entity;
+using System.Collections.Generic;
 
 namespace WebApplication1.Controllers
 {
@@ -15,6 +16,16 @@ namespace WebApplication1.Controllers
         public MenuController(IServiceMenu menu) : base(menu)
         {
             this.menu = menu;
+        }
+        [HttpGet]
+        public List<MenuTreeDTO> GetMenuTreeList()
+        {
+            return menu.GetMenuList();
+        }
+        [HttpGet]
+        public List<MenuAddDTO> GetMenuTreeAdd()
+        {
+            return menu.GetMenuAdd();
         }
     }
 }
