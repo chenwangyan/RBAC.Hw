@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Entity.Migrations
+namespace Rbac.Entity.Migrations
 {
-    public partial class table : Migration
+    public partial class table_1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,13 +11,13 @@ namespace Entity.Migrations
                 name: "Admins",
                 columns: table => new
                 {
-                    AdminId = table.Column<long>(type: "bigint", nullable: false)
+                    AdminId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Password = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    LastLoginTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    LastLoginIP = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    LastLoginTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    LastLoginIP = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     IsLock = table.Column<byte>(type: "tinyint", nullable: false),
                     CreateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreateId = table.Column<int>(type: "int", nullable: false),
@@ -68,7 +68,7 @@ namespace Entity.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    AdminId = table.Column<long>(type: "bigint", nullable: false),
+                    AdminId = table.Column<int>(type: "int", nullable: false),
                     RoleId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>

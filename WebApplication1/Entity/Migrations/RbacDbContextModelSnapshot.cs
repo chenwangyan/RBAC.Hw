@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Rbac.Entity;
 
-namespace Entity.Migrations
+namespace Rbac.Entity.Migrations
 {
     [DbContext(typeof(RbacDbContext))]
     partial class RbacDbContextModelSnapshot : ModelSnapshot

@@ -62,14 +62,13 @@ namespace Rbac.Application.AdminService
             }
             else
             {
-                dto.Password= MD5Encrypt(dto.Password);
-                if(MD5Encrypt(dto.Password).Trim().ToUpper() != list[0].Password.Trim().ToUpper())
+                if(MD5Encrypt(dto.Password).Trim() != list[0].Password.Trim())
                 {
-                    return new LoginResult() { Code = 0, Mes = "密码不对" };
+                    return new LoginResult() { Code = 1, Mes = "密码不对" };
                 }
             }
-            return null;
-            
+
+            return new LoginResult() { Code=2,Mes="登陆成功",LoginToken=""}
         }
 
         /// <summary>

@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Rbac.Entity;
 
-namespace Entity.Migrations
+namespace Rbac.Entity.Migrations
 {
     [DbContext(typeof(RbacDbContext))]
-    [Migration("20220625041453_table_4")]
-    partial class table_4
+    [Migration("20220626120209_table_1")]
+    partial class table_1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
