@@ -1,4 +1,5 @@
 ﻿using DTO;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Rbac.Application.RoleService;
@@ -8,6 +9,7 @@ namespace WebApplication1.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
+    [Authorize]
     public class RoleController : BaseController<IServiceRole, Role, RoleDTO>
     {
         private readonly IServiceRole role;

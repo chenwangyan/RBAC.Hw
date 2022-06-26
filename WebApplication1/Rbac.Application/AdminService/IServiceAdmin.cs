@@ -11,5 +11,6 @@ namespace Rbac.Application.AdminService
     public interface IServiceAdmin:IBaseService<Admin,AdminDTO>
     {
         LoginAddDTO LoginAdd(AdminDTO dto);
+        LoginResult GetLogin(LoginDTO dto);
     }
 }

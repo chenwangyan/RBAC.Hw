@@ -40,7 +40,7 @@
         this.$refs.form.resetFields();
         this.form.ParentId=this.$refs["getParentId"].getCheckedNodes()[0].value;
         debugger;
-           this.$axios.post("/api/Menu/GetMenuAdds",this.form).then(
+           this.$axios.post("/api/Menu/Add",this.form).then(
                     res=>{
                       console.log(res);
                          if(res.data)
@@ -56,7 +56,7 @@
       },
       getMenu(){
                 debugger;
-                this.$axios.get("/api/Menu/GetMenuAdd").then(
+                this.$axios.get("/api/Menu/GetMenuTreeAdd").then(
                     res=>{
                     var reg = new RegExp('\\,"children":\\[]', 'g')
                     this.options = JSON.parse(JSON.stringify(res.data).replace(reg, ''))

@@ -76,7 +76,7 @@
         methods: {
             getMenu(){
                 debugger;
-                this.$axios.get("/api/Menu/GetMenuList").then(
+                this.$axios.get("/api/Menu/GetMenuTreeList").then(
                     res=>{
                         console.log(res);
                      this.tableData = res.data;

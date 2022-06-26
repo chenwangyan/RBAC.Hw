@@ -18,5 +18,6 @@ namespace Rbac.Application
         #endregion
         List<MenuTreeDTO> GetMenuList();
         List<MenuAddDTO> GetMenuAdd();
+        bool GetMenuUpdOne(Menu obj);
     }
 }

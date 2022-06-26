@@ -84,3 +84,9 @@ D:\专高六\练习\6.20练习\WebApplication1\WebApplication1\bin\Debug\net5.0\
 D:\专高六\练习\6.20练习\WebApplication1\WebApplication1\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
 D:\专高六\练习\6.20练习\WebApplication1\WebApplication1\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
 D:\专高六\练习\6.20练习\WebApplication1\WebApplication1\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
+D:\专高六\练习\6.20练习\WebApplication1\WebApplication1\bin\Debug\net5.0\IdentityModel.dll
+D:\专高六\练习\6.20练习\WebApplication1\WebApplication1\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\专高六\练习\6.20练习\WebApplication1\WebApplication1\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+D:\专高六\练习\6.20练习\WebApplication1\WebApplication1\bin\Debug\net5.0\Scrutor.dll
+D:\专高六\练习\6.20练习\WebApplication1\WebApplication1\bin\Debug\net5.0\Swashbuckle.AspNetCore.Filters.dll
+D:\专高六\练习\6.20练习\WebApplication1\WebApplication1\bin\Debug\net5.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll

@@ -22,6 +22,10 @@ using Repository.Menus;
 using System.Reflection;
 using Rbac.Application.AdminService;
 using Rbac.Application.RoleService;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using Swashbuckle.AspNetCore.Filters;
 
 namespace WebApplication1
 {
@@ -50,12 +54,6 @@ namespace WebApplication1
                 // options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
             });
 
-
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApplication1", Version = "v1" });
-            });
-
             //注册
             services.AddDbContext<RbacDbContext>(option => {
                 option.UseSqlServer(Configuration.GetConnectionString("sqlserver"));
@@ -71,7 +69,59 @@ namespace WebApplication1
             services.AddScoped<IServiceAdmin,ServiceAdmin>();
             services.AddScoped<IServiceMenu,ServiceMenu>();
             services.AddScoped<IServiceRole,ServiceRole>();
-            
+
+            //JWT令牌
+            services.AddAuthentication(option =>
+            {
+                option.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                option.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(
+            option =>
+            {
+                //Token验证参数
+                option.TokenValidationParameters = new TokenValidationParameters
+                {
+                    //是否验证发行人
+                    ValidateIssuer = true,
+                    ValidIssuer = Configuration["JwtConfig:Issuer"],//发行人
+
+                    //是否验证受众人
+                    ValidateAudience = true,
+                    ValidAudience = Configuration["JwtConfig:Audience"],//受众人
+
+                    //是否验证密钥
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JwtConfig:key"])),
+
+                    ValidateLifetime = true, //验证生命周期
+
+                    RequireExpirationTime = true, //过期时间
+
+                    ClockSkew = TimeSpan.Zero   //平滑过期偏移时间
+                };
+            }
+            );
+
+            //添加JWT小锁
+            services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApplication1", Version = "v1" });
+
+                //开启权限小锁
+                options.OperationFilter<AddResponseHeadersFilter>();
+                options.OperationFilter<AppendAuthorizeToSummaryOperationFilter>();
+                options.OperationFilter<SecurityRequirementsOperationFilter>();
+
+                //在header中添加token，传递到后台
+                options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
+                {
+                    Description = "JWT授权(数据将在请求头中进行传递)直接在下面框中输入Bearer {token}(注意两者之间是一个空格) \"",
+                    Name = "Authorization",//jwt默认的参数名称
+                    In = ParameterLocation.Header,//jwt默认存放Authorization信息的位置(请求头中)
+                    Type = SecuritySchemeType.ApiKey
+                });
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -91,6 +141,10 @@ namespace WebApplication1
             //跨域
             app.UseCors(option => { option.WithOrigins("*").AllowAnyHeader().AllowAnyMethod(); });
 
+            //认证中间件
+            app.UseAuthentication();
+
+            //授权中间件
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

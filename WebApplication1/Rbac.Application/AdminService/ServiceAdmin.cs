@@ -1,11 +1,16 @@
 ﻿using AutoMapper;
 using DTO;
+using IdentityModel;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 using NPOI.POIFS.Crypt;
 using Rbac.Entity;
 using Repository;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,11 +21,13 @@ namespace Rbac.Application.AdminService
     {
         private readonly IBaseRepository<Admin, int> repository;
         private readonly IMapper mapper;
+        private readonly IConfiguration configuration;
 
-        public ServiceAdmin(IAdminRepository repository, IMapper mapper) : base(repository, mapper)
+        public ServiceAdmin(IAdminRepository repository, IMapper mapper, IConfiguration configuration) : base(repository, mapper)
         {
             this.repository = repository;
             this.mapper = mapper;
+            this.configuration = configuration;
         }
 
         public LoginAddDTO LoginAdd(AdminDTO dto)
@@ -67,8 +74,36 @@ namespace Rbac.Application.AdminService
                     return new LoginResult() { Code = 1, Mes = "密码不对" };
                 }
             }
+            //生成Token令牌
+            IList<Claim> claims = new List<Claim>
+            {
+                new Claim(JwtClaimTypes.Id, dto.UserName)
+            };
 
-            return new LoginResult() { Code=2,Mes="登陆成功",LoginToken=""}
+            //JWT密钥
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JwtConfig:key"]));
+
+            //算法，签名证书
+            var cred = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+            //过期时间
+            DateTime expires = DateTime.UtcNow.AddHours(10);
+
+            //Payload负载
+            var token = new JwtSecurityToken(
+                issuer: configuration["JwtConfig:Issuer"], //发布者、颁发者
+                audience: configuration["JwtConfig:Audience"],  //令牌接收者
+                claims: claims, //自定义声明信息
+                notBefore: DateTime.UtcNow,  //创建时间
+                expires: expires,   //过期时间
+                signingCredentials: cred
+                );
+
+            var handler = new JwtSecurityTokenHandler();
+
+            //生成令牌
+            string jwt = handler.WriteToken(token);
+
+            return new LoginResult() { Code = 2, Mes = "登陆成功", LoginToken = jwt };
         }
 
         /// <summary>

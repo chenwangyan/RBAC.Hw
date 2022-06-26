@@ -65,7 +65,7 @@ export default {
     },
      showInfor()
         {
-            this.$axios.get("/api/Menu/GetMenuList").then
+            this.$axios.get("/api/Menu/GetMenuTreeList").then
             (
                 res=>{
                     this.menuArr=res.data;
