@@ -68,6 +68,8 @@ export default {
             this.$axios.get("/api/Menu/GetMenuTreeList").then
             (
                 res=>{
+              debugger;
+
                     this.menuArr=res.data;
                     console.log(this.menuArr)
                 }

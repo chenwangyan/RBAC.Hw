@@ -26,6 +26,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Swashbuckle.AspNetCore.Filters;
+using Rbac.Application.VFCode;
+using Microsoft.AspNetCore.Http;
 
 namespace WebApplication1
 {
@@ -54,6 +56,34 @@ namespace WebApplication1
                 // options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
             });
 
+            //添加 DistributedCache 服务
+            services.AddDistributedMemoryCache();
+            services.AddSession(option =>
+            {
+                //设置过期时间为5分钟
+                option.IOTimeout = TimeSpan.FromMinutes(5);
+            });
+
+            //添加JWT小锁
+            services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApplication1", Version = "v1" });
+
+                //开启权限小锁
+                options.OperationFilter<AddResponseHeadersFilter>();
+                options.OperationFilter<AppendAuthorizeToSummaryOperationFilter>();
+                options.OperationFilter<SecurityRequirementsOperationFilter>();
+
+                //在header中添加token，传递到后台
+                options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
+                {
+                    Description = "JWT授权(数据将在请求头中进行传递)直接在下面框中输入Bearer {token}(注意两者之间是一个空格) \"",
+                    Name = "Authorization",//jwt默认的参数名称
+                    In = ParameterLocation.Header,//jwt默认存放Authorization信息的位置(请求头中)
+                    Type = SecuritySchemeType.ApiKey
+                });
+            });
+
             //注册
             services.AddDbContext<RbacDbContext>(option => {
                 option.UseSqlServer(Configuration.GetConnectionString("sqlserver"));
@@ -61,7 +91,8 @@ namespace WebApplication1
 
             services.AddAutoMapper(Assembly.Load("Rbac.Application"));
 
-            //注册
+            //作用域
+            #region
             services.AddScoped<IMenuRepository, MenuRepository>();
             services.AddScoped<IRoleRepository, RoleRepository>();
             services.AddScoped<IAdminRepository, AdminRepository>();
@@ -69,6 +100,11 @@ namespace WebApplication1
             services.AddScoped<IServiceAdmin,ServiceAdmin>();
             services.AddScoped<IServiceMenu,ServiceMenu>();
             services.AddScoped<IServiceRole,ServiceRole>();
+
+            services.AddScoped<IServiceCode, ServiceCode>();
+            //services.AddScoped<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddHttpContextAccessor();
+            #endregion
 
             //JWT令牌
             services.AddAuthentication(option =>
@@ -102,26 +138,6 @@ namespace WebApplication1
             }
             );
 
-            //添加JWT小锁
-            services.AddSwaggerGen(options =>
-            {
-                options.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApplication1", Version = "v1" });
-
-                //开启权限小锁
-                options.OperationFilter<AddResponseHeadersFilter>();
-                options.OperationFilter<AppendAuthorizeToSummaryOperationFilter>();
-                options.OperationFilter<SecurityRequirementsOperationFilter>();
-
-                //在header中添加token，传递到后台
-                options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
-                {
-                    Description = "JWT授权(数据将在请求头中进行传递)直接在下面框中输入Bearer {token}(注意两者之间是一个空格) \"",
-                    Name = "Authorization",//jwt默认的参数名称
-                    In = ParameterLocation.Header,//jwt默认存放Authorization信息的位置(请求头中)
-                    Type = SecuritySchemeType.ApiKey
-                });
-            });
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -135,6 +151,9 @@ namespace WebApplication1
             }
 
             app.UseHttpsRedirection();
+
+            //使用session
+            app.UseSession();
 
             app.UseRouting();
 

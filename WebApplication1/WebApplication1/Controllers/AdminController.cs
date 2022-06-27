@@ -18,11 +18,7 @@ namespace WebApplication1.Controllers
         {
             this.admin = admin;
         }
-        [HttpPost]
-        public LoginAddDTO LoginAdd(AdminDTO dto)
-        {
-            return admin.LoginAdd(dto);
-        }
+        
         
     }
 }

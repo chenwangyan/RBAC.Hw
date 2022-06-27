@@ -21,5 +21,10 @@ namespace WebApplication1.Controllers
         {
             return login.GetLogin(dto);
         }
+        [HttpPost]
+        public LoginAddDTO LoginAdd(AdminDTO dto)
+        {
+            return login.LoginAdd(dto);
+        }
     }
 }

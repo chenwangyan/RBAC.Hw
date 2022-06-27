@@ -16,5 +16,6 @@ namespace DTO
         ///密码
         ///</summary>
         public string Password { get; set; }
+        public string CodeMa { get; set; }
     }
 }

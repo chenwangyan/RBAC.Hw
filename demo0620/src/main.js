@@ -10,6 +10,7 @@ const service = axios.create({
   // timeout:10000
   baseURL:"https://localhost:44343" //这里写自己的api地址
 })
+axios.defaults.headers.common['Authorization'] = `bearer ${sessionStorage.getItem("LoginToken")}`
 Vue.config.productionTip = false
 Vue.use(ElementUI);
  Vue.prototype.$axios=service;

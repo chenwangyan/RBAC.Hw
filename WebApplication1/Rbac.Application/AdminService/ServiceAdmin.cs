@@ -32,11 +32,12 @@ namespace Rbac.Application.AdminService
 
         public LoginAddDTO LoginAdd(AdminDTO dto)
         {
+
             if(repository.GetList(m=>m.UserName.Trim().ToUpper()==dto.UserName).Count()>0)
             {
                 return new LoginAddDTO()
                 {
-                    Code = 0,
+                    Code = 1,
                     Mes = "用户名已存在"
                 };
             }
@@ -48,7 +49,7 @@ namespace Rbac.Application.AdminService
             {
                 return new LoginAddDTO()
                 {
-                    Code = 1,
+                    Code = 0,
                     Mes = "添加成功"
                 };
             }
@@ -61,17 +62,19 @@ namespace Rbac.Application.AdminService
 
         public LoginResult GetLogin(LoginDTO dto)
         {
+            
+
             var list = repository.GetList(m => m.UserName.ToUpper().Trim() == dto.UserName);
             //判断是否存在用户
-            if (list==null)
+            if (list.Count==0)
             {
-                return new LoginResult() { Code = 0, Mes = "用户不存在" };
+                return new LoginResult() { Code = 1, Mes = "用户不存在" };
             }
             else
             {
-                if(MD5Encrypt(dto.Password).Trim() != list[0].Password.Trim())
+                if(MD5Encrypt(dto.Password).Trim().ToLower() != list[0].Password.Trim())
                 {
-                    return new LoginResult() { Code = 1, Mes = "密码不对" };
+                    return new LoginResult() { Code = 2, Mes = "密码不对" };
                 }
             }
             //生成Token令牌
@@ -103,7 +106,7 @@ namespace Rbac.Application.AdminService
             //生成令牌
             string jwt = handler.WriteToken(token);
 
-            return new LoginResult() { Code = 2, Mes = "登陆成功", LoginToken = jwt };
+            return new LoginResult() { Code = 0, Mes = "登陆成功", LoginToken = jwt };
         }
 
         /// <summary>

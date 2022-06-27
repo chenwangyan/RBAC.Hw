@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ydtSpKhOIypPKYhupmIidpRyF6jb3qiw2LG4h5BbeyGC2ZkahWM2NpONWbX35n+FAstvsbIXNMmy7YPs/Bz6qQ==",
+  "dgSpecHash": "h/DuJdv3Va+yDh/XaTOQjizpzofk7dp+JShnoLR/XsysKKHqjTHni8vItpFhyJm3F+0iGnifj8Gh1LhCgRPvXA==",
   "success": true,
   "projectFilePath": "D:\\专高六\\练习\\6.20练习\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,8 @@
     "C:\\Users\\71511\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\71511\\.nuget\\packages\\identitymodel\\5.0.1\\identitymodel.5.0.1.nupkg.sha512",
     "C:\\Users\\71511\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.17\\microsoft.aspnetcore.authentication.jwtbearer.5.0.17.nupkg.sha512",
+    "C:\\Users\\71511\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\71511\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\71511\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\5.0.17\\microsoft.aspnetcore.jsonpatch.5.0.17.nupkg.sha512",
     "C:\\Users\\71511\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\5.0.17\\microsoft.aspnetcore.mvc.newtonsoftjson.5.0.17.nupkg.sha512",
     "C:\\Users\\71511\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

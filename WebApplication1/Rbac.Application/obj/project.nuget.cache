@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "Q5obFKh1dNJXBE6gL6Rzej7HItd0nL8js0q07zOMZ6V+8dbRfLFiBYnm3qsQ1/67hqr//4GLE1euHKs3GYF5ug==",
+  "dgSpecHash": "A6esqk7R+Kt3Y9nmwVRw6Q7TKy9nIJIX6lceAsB7VMpEGwcFTGGXUTcBBCM9AFXe5r/Y8kWwH9+2VWAlMmXNMQ==",
   "success": true,
   "projectFilePath": "D:\\专高六\\练习\\6.20练习\\WebApplication1\\Rbac.Application\\Rbac.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\71511\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\71511\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "C:\\Users\\71511\\.nuget\\packages\\identitymodel\\5.0.1\\identitymodel.5.0.1.nupkg.sha512",
+    "C:\\Users\\71511\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\71511\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\71511\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\71511\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\71511\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",
