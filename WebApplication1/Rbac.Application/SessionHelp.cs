@@ -10,7 +10,6 @@ namespace Rbac.Application
     public class SessionHelp
     {
         
-        private IHttpContextAccessor _accessor;
 
         private ISession _session;
         private IRequestCookieCollection _requestCookie;

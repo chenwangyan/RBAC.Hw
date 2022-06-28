@@ -113,7 +113,7 @@ namespace Rbac.Application.VFCode
             CookieOptions options = new CookieOptions();
             // 设置过期时间
             options.Expires = DateTime.Now.AddMinutes(10);
-            accessor.HttpContext.Response.Cookies.Append("CodeKey",t.Result, options);
+            accessor.HttpContext.Response.Cookies.Append("CodeKey",t.Result);
             return Task.FromResult(captcheCode);
         }
 

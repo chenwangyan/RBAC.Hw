@@ -49,6 +49,7 @@
 <script>
     import HelloWorld from './MenuAdd.vue'
     import HellEdit from './MenuEdit.vue'
+    
 
     export default {
         name: 'RbacUIMenu',
@@ -109,8 +110,14 @@
                         debugger;
                      if(res.data>0)
                      {
-                        this.$message.success("删除成功");
-                        this.getMenu();
+                        this.$message({
+                            duration:1000,
+                        message: '删除成功',
+                        type: 'success',
+                        onClose:(m=>{
+                            this.getMenu();
+                        })
+                        });
                      }
                      else
                      {

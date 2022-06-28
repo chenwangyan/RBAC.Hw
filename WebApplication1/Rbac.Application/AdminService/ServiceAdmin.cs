@@ -1,9 +1,11 @@
 ﻿using AutoMapper;
 using DTO;
 using IdentityModel;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using NPOI.POIFS.Crypt;
+using Org.BouncyCastle.Asn1.Ocsp;
 using Rbac.Entity;
 using Repository;
 using System;
@@ -22,17 +24,18 @@ namespace Rbac.Application.AdminService
         private readonly IBaseRepository<Admin, int> repository;
         private readonly IMapper mapper;
         private readonly IConfiguration configuration;
+        private readonly IHttpContextAccessor accessor;
 
-        public ServiceAdmin(IAdminRepository repository, IMapper mapper, IConfiguration configuration) : base(repository, mapper)
+        public ServiceAdmin(IAdminRepository repository, IMapper mapper, IConfiguration configuration, IHttpContextAccessor accessor) : base(repository, mapper)
         {
             this.repository = repository;
             this.mapper = mapper;
             this.configuration = configuration;
+            this.accessor = accessor;
         }
 
         public LoginAddDTO LoginAdd(AdminDTO dto)
         {
-
             if(repository.GetList(m=>m.UserName.Trim().ToUpper()==dto.UserName).Count()>0)
             {
                 return new LoginAddDTO()
@@ -62,8 +65,12 @@ namespace Rbac.Application.AdminService
 
         public LoginResult GetLogin(LoginDTO dto)
         {
-            
-
+            //accessor.HttpContext.Request.Cookies.TryGetValue("CodeKey",out string value);
+            var value = accessor.HttpContext.Request.Cookies["CodeKey"];
+            if (dto.CodeMa.Trim().ToUpper() != value.Trim().ToUpper())
+            {
+                return new LoginResult() { Code = 3, Mes = "验证码不正确" };
+            }
             var list = repository.GetList(m => m.UserName.ToUpper().Trim() == dto.UserName);
             //判断是否存在用户
             if (list.Count==0)

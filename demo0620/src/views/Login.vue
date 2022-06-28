@@ -53,6 +53,7 @@ export default {
   methods: {
     //登陆
     submitForm() {
+      debugger;
         this.$axios.post("/api/Login/GetLogin",this.form).then(res=>{
             let t=res.data;
             if(t.Code>0)
@@ -62,11 +63,11 @@ export default {
             else
             {
                 sessionStorage.setItem("UserName",this.form.UserName);
-                sessionStorage.setItem("LoginToken",t.LoginToken);
+                localStorage.setItem("LoginToken",t.LoginToken);
+
                 this.$router.push("/Home");
                  this.$message.success(t.Mes);
             }
-            debugger;
         })
     },
     //验证码
@@ -74,7 +75,6 @@ export default {
         this.$axios.get('/api/VFCode/Captcha', {responseType: 'blob'}).then((response) => {
             console.log(response.data)
             this.imgUrl = window.URL.createObjectURL(response.data)
-            console.log(this.imgUrl)
         })
     }
 

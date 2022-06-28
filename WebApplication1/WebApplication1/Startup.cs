@@ -138,6 +138,21 @@ namespace WebApplication1
             }
             );
 
+            //services.Configure<CookiePolicyOptions>(options =>
+            //{
+            //    This lambda determines whether user consent for non - essential cookies is needed for a given request.
+            //     options.CheckConsentNeeded = context => false;//关闭GDPR规范    
+            //     options.MinimumSameSitePolicy = SameSiteMode.None;
+            //});
+
+            services.AddCors(option => {
+                option.AddPolicy("cors", option =>
+                {
+                         
+                });
+            });
+
+            //Access - Control - Allow - Credentials=true
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -150,7 +165,8 @@ namespace WebApplication1
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebApplication1 v1"));
             }
 
-            app.UseHttpsRedirection();
+            //默认使用https端口
+            //app.UseHttpsRedirection();
 
             //使用session
             app.UseSession();
@@ -158,7 +174,7 @@ namespace WebApplication1
             app.UseRouting();
 
             //跨域
-            app.UseCors(option => { option.WithOrigins("*").AllowAnyHeader().AllowAnyMethod(); });
+            app.UseCors(option => { option.WithOrigins("http://localhost:8082").AllowAnyHeader().AllowAnyMethod().AllowCredentials();});
 
             //认证中间件
             app.UseAuthentication();
