@@ -28,6 +28,7 @@ using System.Text;
 using Swashbuckle.AspNetCore.Filters;
 using Rbac.Application.VFCode;
 using Microsoft.AspNetCore.Http;
+using Repository.MenuRoles;
 
 namespace WebApplication1
 {
@@ -95,7 +96,8 @@ namespace WebApplication1
             #region
             services.AddScoped<IMenuRepository, MenuRepository>();
             services.AddScoped<IRoleRepository, RoleRepository>();
-            services.AddScoped<IAdminRepository, AdminRepository>();
+            services.AddScoped<IAdminRepository,AdminRepository>();
+            services.AddScoped<IMenuRoleRepository, MenuRoleRepository>();
 
             services.AddScoped<IServiceAdmin,ServiceAdmin>();
             services.AddScoped<IServiceMenu,ServiceMenu>();
@@ -144,15 +146,6 @@ namespace WebApplication1
             //     options.CheckConsentNeeded = context => false;//¹Ø±ÕGDPR¹æ·¶    
             //     options.MinimumSameSitePolicy = SameSiteMode.None;
             //});
-
-            services.AddCors(option => {
-                option.AddPolicy("cors", option =>
-                {
-                         
-                });
-            });
-
-            //Access - Control - Allow - Credentials=true
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

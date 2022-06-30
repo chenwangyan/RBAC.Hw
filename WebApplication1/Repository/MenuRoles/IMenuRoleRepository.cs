@@ -5,10 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Repository
+namespace Repository.MenuRoles
 {
-    public interface IAdminRepository : IBaseRepository<Admin,int>
+    public interface IMenuRoleRepository:IBaseRepository<MenuRole,int>
     {
-
     }
 }

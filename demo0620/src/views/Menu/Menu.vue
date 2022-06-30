@@ -33,7 +33,7 @@
             :visible.sync="dialogVisible"
             width="30%"
             >
-            <HelloWorld @Add=Add  />
+            <HelloWorld @Add=Add :key="new Date().getTime()"  />
         </el-dialog>
          <!-- /修改框 -->
         <el-dialog
@@ -79,13 +79,11 @@
                 debugger;
                 this.$axios.get("/api/Menu/GetMenuTreeList").then(
                     res=>{
-                        console.log(res);
                      this.tableData = res.data;
               })
             },
            
              handleNodeClick(data) {
-                console.log(data);
             },
             //添加节点
             getMenuAdd(){

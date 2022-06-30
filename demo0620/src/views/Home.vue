@@ -5,7 +5,7 @@
      <el-menu
           :collapse="isCollapse"
           :default-active="activeIndex"
-          :unique-opened="true"
+         
           router
           ref="elMenu"
           @select="menuSelect"
@@ -13,7 +13,6 @@
           <!-- 递归动态菜单 -->
           <myitem :data="menuArr"></myitem>
         </el-menu>
-      
   </el-aside>
   
   <el-container>
@@ -26,9 +25,9 @@
           <el-dropdown-item>删除</el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
-      <span>王小虎</span>
+      <span>管理员</span>
     </el-header>
-    
+
     <el-main>
       <router-view/>
     </el-main>
@@ -56,7 +55,6 @@ export default {
     };
   },
   mounted() {
-    console.log(this.$route)
     this.showInfor();
   },
   methods: {
@@ -68,10 +66,7 @@ export default {
             this.$axios.get("/api/Menu/GetMenuTreeList").then
             (
                 res=>{
-              debugger;
-
                     this.menuArr=res.data;
-                    console.log(this.menuArr)
                 }
                 
             )

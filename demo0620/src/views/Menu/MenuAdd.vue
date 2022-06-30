@@ -42,7 +42,6 @@
         debugger;
            this.$axios.post("/api/Menu/Add",this.form).then(
                     res=>{
-                      console.log(res);
                          if(res.data)
                      {
                         this.$message.success("添加成功");

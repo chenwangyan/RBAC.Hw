@@ -25,6 +25,7 @@ namespace Repository
         TEntity FindOne(TKey key);
         //查找数据并不调动数据库  通过拉姆达表达式
         IQueryable<TEntity> QueryList(Expression<Func<TEntity, bool>> predicate);
+        IQueryable<TEntity> QueryList();
         //查找数据调用数据库  通过拉姆达表达式
         List<TEntity> GetList(Expression<Func<TEntity, bool>> predicate);
 

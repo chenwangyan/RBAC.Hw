@@ -12,5 +12,7 @@ namespace Rbac.Application.AdminService
     {
         LoginAddDTO LoginAdd(AdminDTO dto);
         LoginResult GetLogin(LoginDTO dto);
+
+        Tuple<List<ResultAdminPage>,int> GetAdminPage(AdminPage page);
     }
 }

@@ -73,7 +73,6 @@ export default {
     //验证码
     graphicCode() {
         this.$axios.get('/api/VFCode/Captcha', {responseType: 'blob'}).then((response) => {
-            console.log(response.data)
             this.imgUrl = window.URL.createObjectURL(response.data)
         })
     }

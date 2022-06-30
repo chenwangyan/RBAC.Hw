@@ -134,7 +134,7 @@ namespace Rbac.Application
         {
             if (obj.ParentId == 0)
             {
-                string[] ps = { obj.MenuName,obj.LinkUrl};
+                string[] ps = { "MenuName", "LinkUrl" };
                 return repository.Update(mapper.Map<Menu>(obj), ps) > 0;
             }
             return repository.Update(mapper.Map<Menu>(obj)) > 0;

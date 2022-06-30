@@ -19,5 +19,7 @@ namespace Rbac.Application
         List<MenuTreeDTO> GetMenuList();
         List<MenuAddDTO> GetMenuAdd();
         bool GetMenuUpdOne(Menu obj);
+        bool GetMenuEdit(MenuDTO obj);
+        bool GetMenuAdd(MenuDTO obj);
     }
 }

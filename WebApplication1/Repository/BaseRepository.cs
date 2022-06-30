@@ -71,6 +71,10 @@ namespace Repository
         {
             return dbContext.Set<TEntity>().Where(predicate);
         }
+        public IQueryable<TEntity> QueryList()
+        {
+            return dbContext.Set<TEntity>().AsQueryable();
+        }
 
         public int Update(TEntity entity)
         {

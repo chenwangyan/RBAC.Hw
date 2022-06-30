@@ -10,6 +10,7 @@ namespace Rbac.Application.RoleService
 {
     public interface IServiceRole:IBaseService<Role,RoleDTO>
     {
-
+        Tuple<List<RoleDTO>,int> GetRolePage(RolePage dto);
+        int GetAddMenuRole(MenuRoleDTO dto);
     }
 }

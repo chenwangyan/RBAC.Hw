@@ -21,7 +21,7 @@ namespace Rbac.Application.AdminService
 {
     public class ServiceAdmin : BaseService<Admin, AdminDTO>, IServiceAdmin
     {
-        private readonly IBaseRepository<Admin, int> repository;
+        private readonly IAdminRepository repository;
         private readonly IMapper mapper;
         private readonly IConfiguration configuration;
         private readonly IHttpContextAccessor accessor;
@@ -146,5 +146,22 @@ namespace Rbac.Application.AdminService
             return strbul.ToString();
         }
 
+        /// <summary>
+        /// 返回分页
+        /// </summary>
+        /// <param name="page"></param>
+        /// <returns></returns>
+        public Tuple<List<ResultAdminPage>, int> GetAdminPage(AdminPage page)
+        {
+            var list=repository.QueryList();
+            if(!string.IsNullOrWhiteSpace(page.UserName))
+            {
+                list = list.Where(m => m.UserName.Contains(page.UserName));
+            }
+            int toTalCount=list.Count();
+            list = list.OrderBy(m => m.AdminId).Skip((page.PageIndex - 1) * page.PageSize).Take(page.PageSize);
+            var slist = mapper.Map<List<ResultAdminPage>>(list.ToList());
+            return new Tuple<List<ResultAdminPage>, int>(slist,toTalCount);
+        }
     }
 }

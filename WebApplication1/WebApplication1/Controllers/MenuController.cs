@@ -29,5 +29,20 @@ namespace WebApplication1.Controllers
         {
             return menu.GetMenuAdd();
         }
+        [HttpPost]
+        public bool GetMenuUpdOne(Menu obj)
+        {
+            return menu.GetMenuUpdOne(obj);
+        }
+        [HttpPost]
+        public bool GetMenuEdit(MenuDTO obj)
+        {
+            return menu.GetMenuEdit(obj);
+        }
+        [HttpPost]
+        public bool GetMenuAdd(MenuDTO obj)
+        {
+            return menu.GetMenuAdd(obj);
+        }
     }
 }

@@ -4,12 +4,14 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Rbac.Application.AdminService;
 using Rbac.Entity;
+using System;
+using System.Collections.Generic;
 
 namespace WebApplication1.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class AdminController : BaseController<IServiceAdmin, Admin, AdminDTO>
     {
         private readonly IServiceAdmin admin;
@@ -18,7 +20,10 @@ namespace WebApplication1.Controllers
         {
             this.admin = admin;
         }
-        
-        
+        [HttpPost]
+        public Tuple<List<ResultAdminPage>, int> GetAdminPage(AdminPage page)
+        {
+            return admin.GetAdminPage(page);
+        }
     }
 }

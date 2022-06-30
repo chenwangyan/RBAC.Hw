@@ -30,7 +30,6 @@ export default {
   },
   mounted(){
     debugger;
-    console.log(this.data);
   }
  
   // 注意： 在template标签上使用v-for，:key="index"不能写在template标签上，因为其标签不会被渲染，会引起循环错误

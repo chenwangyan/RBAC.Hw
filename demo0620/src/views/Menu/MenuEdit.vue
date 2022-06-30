@@ -60,9 +60,8 @@
             this.form.MenuName=this.formdate.MenuName;
             this.form.LinkUrl=this.formdate.LinkUrl;
             this.form.ParentId=this.formdate.MenuId;
-              this.$axios.get("/api/Menu/GetMenuAdd").then(
+              this.$axios.get("/api/Menu/GetMenuTreeAdd").then(
                   res=>{
-                    console.log(res);
                     this.options = res.data;
             })
       },
