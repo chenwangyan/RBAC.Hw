@@ -1,0 +1,8 @@
+D:\专高六\练习\6.20练习\WebApplication1\Exec\obj\Debug\Exec.csproj.AssemblyReference.cache
+D:\专高六\练习\6.20练习\WebApplication1\Exec\obj\Debug\Exec.csproj.SuggestedBindingRedirects.cache
+D:\专高六\练习\6.20练习\WebApplication1\Exec\obj\Debug\Exec.csproj.CoreCompileInputs.cache
+D:\专高六\练习\6.20练习\WebApplication1\Exec\bin\Debug\Exec.exe.config
+D:\专高六\练习\6.20练习\WebApplication1\Exec\bin\Debug\Exec.exe
+D:\专高六\练习\6.20练习\WebApplication1\Exec\bin\Debug\Exec.pdb
+D:\专高六\练习\6.20练习\WebApplication1\Exec\obj\Debug\Exec.exe
+D:\专高六\练习\6.20练习\WebApplication1\Exec\obj\Debug\Exec.pdb

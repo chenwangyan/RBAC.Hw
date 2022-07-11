@@ -65,7 +65,7 @@ export default {
                 sessionStorage.setItem("UserName",this.form.UserName);
                 localStorage.setItem("LoginToken",t.LoginToken);
 
-                this.$router.push("/Home");
+                this.$router.push("/");
                  this.$message.success(t.Mes);
             }
         })

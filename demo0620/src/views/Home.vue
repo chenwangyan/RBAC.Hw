@@ -62,15 +62,14 @@ export default {
       this.activeIndex = index;
     },
      showInfor()
-        {
-            this.$axios.get("/api/Menu/GetMenuTreeList").then
-            (
-                res=>{
-                    this.menuArr=res.data;
-                }
-                
-            )
-        },
+      {
+          this.$axios.get("/api/Menu/GetMenuTreeList").then
+          (
+              res=>{
+                  this.menuArr=res.data;
+              }
+          )
+      },
     loginOut() {
       this.$router.push({
         path: "/login",

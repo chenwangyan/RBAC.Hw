@@ -36,7 +36,7 @@ const router = new VueRouter({
   routes
 })
 
-// // 导航守卫
+// 导航守卫
 // router.beforeEach((to, from, next) => {
 //   var loginname=window.sessionStorage.getItem("UserName")??"";
 //   if (to.name !== 'Login'&& loginname.length==0)

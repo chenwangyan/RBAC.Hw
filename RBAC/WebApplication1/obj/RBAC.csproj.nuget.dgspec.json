@@ -1,0 +1,412 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\专高六\\练习\\6.20练习\\RBAC\\WebApplication1\\RBAC.csproj": {}
+  },
+  "projects": {
+    "D:\\专高六\\练习\\6.20练习\\RBAC\\DTO\\DTO.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\专高六\\练习\\6.20练习\\RBAC\\DTO\\DTO.csproj",
+        "projectName": "DTO",
+        "projectPath": "D:\\专高六\\练习\\6.20练习\\RBAC\\DTO\\DTO.csproj",
+        "packagesPath": "C:\\Users\\71511\\.nuget\\packages\\",
+        "outputPath": "D:\\专高六\\练习\\6.20练习\\RBAC\\DTO\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\学习软件\\新建文件夹\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\71511\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\专高六\\练习\\6.20练习\\RBAC\\Entity\\Rbac.Entity.csproj": {
+                "projectPath": "D:\\专高六\\练习\\6.20练习\\RBAC\\Entity\\Rbac.Entity.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\专高六\\练习\\6.20练习\\RBAC\\Entity\\Rbac.Entity.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\专高六\\练习\\6.20练习\\RBAC\\Entity\\Rbac.Entity.csproj",
+        "projectName": "Rbac.Entity",
+        "projectPath": "D:\\专高六\\练习\\6.20练习\\RBAC\\Entity\\Rbac.Entity.csproj",
+        "packagesPath": "C:\\Users\\71511\\.nuget\\packages\\",
+        "outputPath": "D:\\专高六\\练习\\6.20练习\\RBAC\\Entity\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\学习软件\\新建文件夹\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\71511\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\专高六\\练习\\6.20练习\\RBAC\\Rbac.Application\\Rbac.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\专高六\\练习\\6.20练习\\RBAC\\Rbac.Application\\Rbac.Application.csproj",
+        "projectName": "Rbac.Application",
+        "projectPath": "D:\\专高六\\练习\\6.20练习\\RBAC\\Rbac.Application\\Rbac.Application.csproj",
+        "packagesPath": "C:\\Users\\71511\\.nuget\\packages\\",
+        "outputPath": "D:\\专高六\\练习\\6.20练习\\RBAC\\Rbac.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\学习软件\\新建文件夹\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\71511\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\专高六\\练习\\6.20练习\\RBAC\\DTO\\DTO.csproj": {
+                "projectPath": "D:\\专高六\\练习\\6.20练习\\RBAC\\DTO\\DTO.csproj"
+              },
+              "D:\\专高六\\练习\\6.20练习\\RBAC\\Entity\\Rbac.Entity.csproj": {
+                "projectPath": "D:\\专高六\\练习\\6.20练习\\RBAC\\Entity\\Rbac.Entity.csproj"
+              },
+              "D:\\专高六\\练习\\6.20练习\\RBAC\\Repository\\Repository.csproj": {
+                "projectPath": "D:\\专高六\\练习\\6.20练习\\RBAC\\Repository\\Repository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "IdentityModel": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\专高六\\练习\\6.20练习\\RBAC\\Repository\\Repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\专高六\\练习\\6.20练习\\RBAC\\Repository\\Repository.csproj",
+        "projectName": "Repository",
+        "projectPath": "D:\\专高六\\练习\\6.20练习\\RBAC\\Repository\\Repository.csproj",
+        "packagesPath": "C:\\Users\\71511\\.nuget\\packages\\",
+        "outputPath": "D:\\专高六\\练习\\6.20练习\\RBAC\\Repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\学习软件\\新建文件夹\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\71511\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\专高六\\练习\\6.20练习\\RBAC\\Entity\\Rbac.Entity.csproj": {
+                "projectPath": "D:\\专高六\\练习\\6.20练习\\RBAC\\Entity\\Rbac.Entity.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "NPOI": {
+              "target": "Package",
+              "version": "[2.5.6, )"
+            },
+            "Z.EntityFramework.Plus.EFCore": {
+              "target": "Package",
+              "version": "[5.14.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\专高六\\练习\\6.20练习\\RBAC\\WebApplication1\\RBAC.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\专高六\\练习\\6.20练习\\RBAC\\WebApplication1\\RBAC.csproj",
+        "projectName": "RBAC",
+        "projectPath": "D:\\专高六\\练习\\6.20练习\\RBAC\\WebApplication1\\RBAC.csproj",
+        "packagesPath": "C:\\Users\\71511\\.nuget\\packages\\",
+        "outputPath": "D:\\专高六\\练习\\6.20练习\\RBAC\\WebApplication1\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\学习软件\\新建文件夹\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\71511\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\专高六\\练习\\6.20练习\\RBAC\\DTO\\DTO.csproj": {
+                "projectPath": "D:\\专高六\\练习\\6.20练习\\RBAC\\DTO\\DTO.csproj"
+              },
+              "D:\\专高六\\练习\\6.20练习\\RBAC\\Entity\\Rbac.Entity.csproj": {
+                "projectPath": "D:\\专高六\\练习\\6.20练习\\RBAC\\Entity\\Rbac.Entity.csproj"
+              },
+              "D:\\专高六\\练习\\6.20练习\\RBAC\\Rbac.Application\\Rbac.Application.csproj": {
+                "projectPath": "D:\\专高六\\练习\\6.20练习\\RBAC\\Rbac.Application\\Rbac.Application.csproj"
+              },
+              "D:\\专高六\\练习\\6.20练习\\RBAC\\Repository\\Repository.csproj": {
+                "projectPath": "D:\\专高六\\练习\\6.20练习\\RBAC\\Repository\\Repository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.6.3, )"
+            },
+            "Swashbuckle.AspNetCore.Filters": {
+              "target": "Package",
+              "version": "[7.0.3, )"
+            },
+            "Z.EntityFramework.Plus.EFCore": {
+              "target": "Package",
+              "version": "[5.14.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

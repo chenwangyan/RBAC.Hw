@@ -6,8 +6,7 @@
         show-checkbox
         node-key="id"
         :default-expand-all="true"
-        :default-expanded-keys="[2, 3]"
-        :default-checked-keys="[5]"
+        :default-checked-keys="Ids"
         :props="defaultProps">
     </el-tree>
     <el-button @click="getCheckNode">查看信息</el-button>
@@ -16,14 +15,15 @@
 
 <script>
   export default {
-   
+   props:["RoleId"],
     data() {
       return {
         data: [],
         defaultProps: {
           children: 'children',
           label: 'label'
-        }
+        },
+        Ids:[]
       };
     },
     methods:{
@@ -36,12 +36,25 @@
                     this.data = JSON.parse(JSON.stringify(res.data).replace(reg, ''))
               })
         },
-        getCheckNode(){
-            var list=this.$refs["treedate"].getCheckedNodes(true,true).map(m=>m.value);
+        // getCheckNode(){
+        //     var list=this.$refs["treedate"].getCheckedNodes(true,true).map(m=>m.value);
+        // },
+        getDfCheck(){
+            this.$axios.get(`/api/Role/GetMenuRoleResult?RoleId=${this.RoleId}`).then(
+                res=>{
+                  debugger;
+                  console.log(res.data);
+                  this.Ids=res.data.map(m=>m.MenuId);
+                  console.log(this.Ids);
+                }
+          )
         }
     },
     created(){
         this.getMenu();
+    },
+    mounted(){
+      this.getDfCheck();
     }
   };
 </script>

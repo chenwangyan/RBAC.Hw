@@ -13,7 +13,7 @@
       </el-table-column>
 
        <el-table-column
-        label="账号创建时间"
+        label="角色创建时间"
         width="180">
         <template slot-scope="scope">
           <i class="el-icon-time"></i>
@@ -43,7 +43,7 @@
         :visible.sync="dialogVisible"
         width="30%"
         >
-        <tree ref="treenode" ></tree>
+        <tree ref="treenode" :RoleId=MenuRole.RoleId :key="new Date().getTime()" ></tree>
         <span slot="footer" class="dialog-footer">
             <el-button @click="dialogVisible = false">取 消</el-button>
             <el-button type="primary" @click="getNodeId">确 定</el-button>

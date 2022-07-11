@@ -20,7 +20,34 @@
           <span style="margin-left: 10px">{{ scope.row.CreateTime | TimeFil }}</span>
         </template>
       </el-table-column>
+
+        <el-table-column label="操作">
+        <template slot-scope="scope">
+          <el-button
+            size="mini"
+            type="primary"
+            @click="getAllot(scope.row.AdminId)">分配权限</el-button>
+          <el-button
+            size="mini"
+            @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
+          <el-button
+            size="mini"
+            type="danger"
+            @click="handleDelete(scope.$index, scope.row)">删除</el-button>
+        </template>
+      </el-table-column>
     </el-table>
+
+    <!-- 加载角色信息 -->
+    <el-dialog
+        title="管理员分配角色"
+        :visible.sync="dialogVisible"
+        width="30%"
+        >
+         <roledate ref="sel" @getSure=getSure :AdminId=formdate.AdminId ></roledate>
+        
+    </el-dialog>
+
 
     <!-- 分页 -->
     <el-pagination
@@ -37,7 +64,11 @@
   </template>
 
   <script>
+     import roledate from '../Admin/RoleSel.vue'
     export default {
+      components:{
+        roledate
+      },
       data() {
         return {
           AdminData: [],
@@ -45,7 +76,12 @@
             pageIndex:1,
             pageSize:2
           },
-          totalCount:0
+          totalCount:0,
+          dialogVisible:false,
+          formdate:{
+            AdminId:0,
+            RoleId:[]
+          }
         }
       },
       methods:{
@@ -54,6 +90,20 @@
                 this.AdminData=res.data.Item1;
                 this.totalCount=res.data.Item2;
             })
+        },
+        getAllot(AdminId){
+          this.formdate.AdminId=AdminId;
+          this.dialogVisible=true;
+        },
+        getSure(){
+          this.getAdmin();
+          this.dialogVisible=false;
+        },
+         handleEdit(){
+
+        },
+        handleDelete(){
+            
         },
          handleSizeChange(val) {
           debugger;

@@ -16,6 +16,7 @@ service.defaults.withCredentials = true
 
 service.defaults.headers.common['Authorization'] = `bearer ${localStorage.getItem("LoginToken")}`
 
+
 Vue.config.productionTip = false
 Vue.use(ElementUI);
 Vue.use(VueCookies);
